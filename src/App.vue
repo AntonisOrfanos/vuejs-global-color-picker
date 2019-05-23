@@ -1,28 +1,47 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="my-app" class="container">
+    <nav class="navbar navbar-expand-sm bg-light">
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <b-link class="nav-link" to="/">Home</b-link>
+        </li>
+        <li class="nav-item">
+          <b-link class="nav-link" to="/color-picker">Color Picker</b-link>
+        </li>
+        <li class="nav-item">
+          <b-link class="nav-link" to="/scss">SCSS</b-link>
+        </li>
+      </ul>
+
+    </nav>
+    
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+//import MyColorPicker from './components/MyColorPicker.vue'
 
 export default {
   name: 'app',
-  components: {
-    HelloWorld
-  }
+  // components: {
+  //   MyColorPicker
+  // }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #my-app {
+    background: #fff;
+    box-shadow: 0px -3px 10px 5px #fff;
+    // padding: 0;
+  }
+  a.nav-link {
+    text-decoration: none !important;
+    font-weight: normal !important;
+  }
+  .router-link-exact-active {
+    font-weight: bold !important;
+  }
 </style>
